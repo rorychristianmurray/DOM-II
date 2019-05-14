@@ -4,16 +4,18 @@
 	* [ 3 ] `mouseover`
 	* [ 3 ] `keydown`
 	* [ 1 ] `wheel`
-	* [ ] `drag / drop`
+	* [ 1 ] `drag / drop`
 	* [ ] `load`
 	* [ ] `focus`
 	* [ ] `resize`
-	* [ ] `scroll`
+	* [ 1 ] `scroll`
 	* [ ] `select`
-    * [ ] `dblclick`
+    * [ 1 ] `dblclick`
 	* 
 	* [ 1 ]	copy
 	* [ 2 ]	click	
+	* [ 1 ] mousedown
+	* [ 1 ]	mouseout
     
 */
 
@@ -58,7 +60,7 @@ for(let i = 0; i < bottomContent.length; i++) {
 
 }
 
-// Make bottom content reappear when clicking on bottom copywright
+// Make bottom content reappear when clicking on bottom copyright
 
 
 
@@ -96,11 +98,71 @@ bodyManipulate.addEventListener('keydown', function(event) {
 	}, 2000);
 })
 
-bodyManipulate.addEventListener('wheel', function(event) {
-	console.log('wheel');
-	alert('take your time, my man');
+// bodyManipulate.addEventListener('wheel', function(event) {
+// 	console.log('wheel');
+// 	alert('take your time, my man');
+
+// })
+
+// Mousedown
+const topRightImg = document.querySelector('.img-content')
+
+// topRightImg.addEventListener('mousedown', function(event) {
+// 	console.log('mousedown');
+// 	topRightImg.style.width = '200%'
+
+// })
+
+topRightImg.addEventListener('mousedown', function(event) {
+	console.log('mousedown');
+	topRightImg.style.width = '100%'
 
 })
+
+// Scroll
+
+// document.addEventListener('scroll', function(event) {
+// 	console.log('scroll');
+// 	setTimeout(function() {
+// 		alert(`That's enough messing around`)
+// 	}, 2000)
+	
+// })
+
+
+
+// dblclick
+
+let topTextContent = document.querySelector('.text-content');
+
+topTextContent.addEventListener('dblclick', function(event) {
+	console.log('dblclick');
+	topTextContent.style.color = 'fuchsia'
+
+})
+
+// mouseout
+
+topTextContent.addEventListener('mouseout', function(event) {
+	console.log('dblclick');
+	topTextContent.style.color = 'black'
+
+})
+
+// drag
+
+topTextContent.addEventListener('drag', function(event) {
+	console.log('drag');
+	topTextContent.style.color = 'red'
+
+})
+
+
+
+
+
+
+// Nest two similar events and prevent
 
 
 
