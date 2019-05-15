@@ -19,6 +19,7 @@
     
 */
 
+
 // Change top header 'Fun Bus'
 
 const topHeader = document.querySelector('.logo-heading');
@@ -107,17 +108,12 @@ bodyManipulate.addEventListener('keydown', function(event) {
 // Mousedown
 const topRightImg = document.querySelector('.img-content')
 
-// topRightImg.addEventListener('mousedown', function(event) {
-// 	console.log('mousedown');
-// 	topRightImg.style.width = '200%'
-
-// })
-
 topRightImg.addEventListener('mousedown', function(event) {
 	console.log('mousedown');
-	topRightImg.style.width = '100%'
+	topRightImg.style.width = '200%'
 
 })
+
 
 // Scroll
 
@@ -159,13 +155,29 @@ topTextContent.addEventListener('drag', function(event) {
 
 
 
-
-
-
 // Nest two similar events and prevent
+// Stop navigation items from refreshing the page 
+
+const navBucket = document.querySelector('.nav-container');
+
+navBucket.addEventListener('click', function(event) {
+	console.log('buckety clicky');
+	navBucket.style.backgroundColor = 'fuchsia';
+})
 
 
+const navItems = document.querySelectorAll('.nav-link');
 
+for(let i = 0; i < navItems.length; i++) {
+	navItems[i].addEventListener('click', function(event) {
+		console.log('navvy clicky');
+		navItems[i].style.backgroundColor = 'red';
+		event.stopPropagation();
+		event.preventDefault()
+
+
+	})
+}
 
 
 
